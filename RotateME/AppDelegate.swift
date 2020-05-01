@@ -3,7 +3,7 @@
 //  RotateME
 //
 //  Created by Beka Gelashvili on 5/1/20.
-//  Copyright © 2020 TBC. All rights reserved.
+//  Copyright © 2020 Aisitec. All rights reserved.
 //
 
 import UIKit

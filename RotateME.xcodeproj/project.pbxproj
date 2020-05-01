@@ -67,8 +67,8 @@
 				3DA63F18245C8C5400DA8D65 /* SceneDelegate.swift */,
 				3DA63F1A245C8C5400DA8D65 /* ViewController.swift */,
 				3DA63F1C245C8C5400DA8D65 /* Main.storyboard */,
-				3DA63F1F245C8C5500DA8D65 /* Assets.xcassets */,
 				3DA63F21245C8C5500DA8D65 /* LaunchScreen.storyboard */,
+				3DA63F1F245C8C5500DA8D65 /* Assets.xcassets */,
 				3DA63F24245C8C5500DA8D65 /* Info.plist */,
 			);
 			path = RotateME;
