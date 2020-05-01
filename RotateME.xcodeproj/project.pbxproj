@@ -13,6 +13,7 @@
 		3DA63F1E245C8C5400DA8D65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DA63F1C245C8C5400DA8D65 /* Main.storyboard */; };
 		3DA63F20245C8C5500DA8D65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DA63F1F245C8C5500DA8D65 /* Assets.xcassets */; };
 		3DA63F23245C8C5500DA8D65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DA63F21245C8C5500DA8D65 /* LaunchScreen.storyboard */; };
+		B98B1A6D70FFF6A01073EC1F /* Pods_RotateME.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA113EDA3844C7C914A1A94B /* Pods_RotateME.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,9 @@
 		3DA63F1F245C8C5500DA8D65 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3DA63F22245C8C5500DA8D65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3DA63F24245C8C5500DA8D65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		48D59E761EE22741FB83242E /* Pods-RotateME.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RotateME.debug.xcconfig"; path = "Target Support Files/Pods-RotateME/Pods-RotateME.debug.xcconfig"; sourceTree = "<group>"; };
+		4B72A8D4EF1FF1FB5D1E22E1 /* Pods-RotateME.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RotateME.release.xcconfig"; path = "Target Support Files/Pods-RotateME/Pods-RotateME.release.xcconfig"; sourceTree = "<group>"; };
+		CA113EDA3844C7C914A1A94B /* Pods_RotateME.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RotateME.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B98B1A6D70FFF6A01073EC1F /* Pods_RotateME.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				3DA63F15245C8C5400DA8D65 /* RotateME */,
 				3DA63F14245C8C5400DA8D65 /* Products */,
+				EF626BD1EA44CA35BBE16381 /* Pods */,
+				8942F7BDD8664AE8270757DB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +74,23 @@
 			path = RotateME;
 			sourceTree = "<group>";
 		};
+		8942F7BDD8664AE8270757DB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CA113EDA3844C7C914A1A94B /* Pods_RotateME.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EF626BD1EA44CA35BBE16381 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				48D59E761EE22741FB83242E /* Pods-RotateME.debug.xcconfig */,
+				4B72A8D4EF1FF1FB5D1E22E1 /* Pods-RotateME.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,6 +98,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3DA63F27245C8C5500DA8D65 /* Build configuration list for PBXNativeTarget "RotateME" */;
 			buildPhases = (
+				FCF626385BB9A39A7945DE63 /* [CP] Check Pods Manifest.lock */,
 				3DA63F0F245C8C5400DA8D65 /* Sources */,
 				3DA63F10245C8C5400DA8D65 /* Frameworks */,
 				3DA63F11245C8C5400DA8D65 /* Resources */,
@@ -132,6 +157,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		FCF626385BB9A39A7945DE63 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RotateME-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3DA63F0F245C8C5400DA8D65 /* Sources */ = {
@@ -216,7 +266,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -270,7 +320,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -282,11 +332,13 @@
 		};
 		3DA63F28245C8C5500DA8D65 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 48D59E761EE22741FB83242E /* Pods-RotateME.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 73BR79375Q;
 				INFOPLIST_FILE = RotateME/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -300,11 +352,13 @@
 		};
 		3DA63F29245C8C5500DA8D65 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B72A8D4EF1FF1FB5D1E22E1 /* Pods-RotateME.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 73BR79375Q;
 				INFOPLIST_FILE = RotateME/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
