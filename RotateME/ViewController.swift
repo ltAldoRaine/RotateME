@@ -10,12 +10,38 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var coverImageView: UIImageView!
+
+    private var lastZoomScale: CGFloat = 0
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
     @IBAction func onPickMeButtonTapped() {
         showPickerController(fromSourceType: .photoLibrary)
+    }
+
+    @IBAction func onRotationHandler(_ sender: UIRotationGestureRecognizer) {
+        coverImageView.transform = coverImageView.transform.rotated(by: sender.rotation)
+        sender.rotation = 0
+    }
+
+    @IBAction func onZoomHandler(_ sender: UIPinchGestureRecognizer) {
+        if sender.state == .began {
+            lastZoomScale = sender.scale
+        }
+        if let value = coverImageView.layer.value(forKeyPath: "transform.scale"),
+            let currentScale = value as? CGFloat,
+            sender.state == .began || sender.state == .changed {
+            let kMaxScale: CGFloat = 2.0
+            let kMinScale: CGFloat = 1.0
+            var newScale = 1 - (lastZoomScale - sender.scale)
+            newScale = min(newScale, kMaxScale / currentScale)
+            newScale = max(newScale, kMinScale / currentScale)
+            lastZoomScale = sender.scale
+            coverImageView.transform = coverImageView.transform.scaledBy(x: newScale, y: newScale)
+        }
     }
 
     private func showPickerController(fromSourceType sourceType: UIImagePickerController.SourceType) {
@@ -37,8 +63,9 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
             return
         }
         picker.dismiss(animated: true)
-        print(image)
+        lastZoomScale = 0
+        coverImageView.transform = .identity
+        coverImageView.image = image
     }
 
 }
-

@@ -15,26 +15,73 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QOB-NX-GGB">
-                                <rect key="frame" x="149.66666666666666" y="421.66666666666669" width="114.99999999999997" height="53"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                <state key="normal" title="Pick me"/>
-                                <connections>
-                                    <action selector="onPickMeButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="AJx-Kt-Ttx"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="vql-fL-ADc">
+                                <rect key="frame" x="15" y="74" width="384" height="788"/>
+                                <subviews>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kRv-fy-ey3">
+                                        <rect key="frame" x="0.0" y="0.0" width="384" height="394"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchImage" translatesAutoresizingMaskIntoConstraints="NO" id="z4a-r2-bi2">
+                                                <rect key="frame" x="0.0" y="0.0" width="384" height="394"/>
+                                                <gestureRecognizers/>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="kFK-d9-8yc" appends="YES" id="Pqh-Bg-N8b"/>
+                                                </connections>
+                                            </imageView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="z4a-r2-bi2" secondAttribute="trailing" id="8eO-8H-9bz"/>
+                                            <constraint firstItem="z4a-r2-bi2" firstAttribute="top" secondItem="kRv-fy-ey3" secondAttribute="top" id="Tg4-ZX-zGI"/>
+                                            <constraint firstItem="z4a-r2-bi2" firstAttribute="leading" secondItem="kRv-fy-ey3" secondAttribute="leading" id="gCd-MD-MtF"/>
+                                            <constraint firstAttribute="bottom" secondItem="z4a-r2-bi2" secondAttribute="bottom" id="q4c-cU-33f"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="o7I-CA-ty4" appends="YES" id="NIE-To-F4t"/>
+                                        </connections>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QOB-NX-GGB">
+                                        <rect key="frame" x="0.0" y="394" width="384" height="394"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                        <state key="normal" title="Pick me"/>
+                                        <connections>
+                                            <action selector="onPickMeButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="AJx-Kt-Ttx"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="kRv-fy-ey3" firstAttribute="height" secondItem="vql-fL-ADc" secondAttribute="height" multiplier="0.5" id="1he-3h-IAs"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="QOB-NX-GGB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="esb-bf-5bA"/>
-                            <constraint firstItem="QOB-NX-GGB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jNw-gj-5Rg"/>
+                            <constraint firstItem="vql-fL-ADc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="8GX-hr-6Ma"/>
+                            <constraint firstItem="vql-fL-ADc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="CCS-Cl-pgC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="vql-fL-ADc" secondAttribute="bottom" id="jDl-UD-W5Q"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vql-fL-ADc" secondAttribute="trailing" constant="15" id="wbp-Eb-MLC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="coverImageView" destination="z4a-r2-bi2" id="t3F-C8-jro"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <rotationGestureRecognizer id="o7I-CA-ty4">
+                    <connections>
+                        <action selector="onRotationHandler:" destination="BYZ-38-t0r" id="6yJ-EP-J6y"/>
+                    </connections>
+                </rotationGestureRecognizer>
+                <pinchGestureRecognizer id="kFK-d9-8yc">
+                    <connections>
+                        <action selector="onZoomHandler:" destination="BYZ-38-t0r" id="Dbk-t4-uch"/>
+                    </connections>
+                </pinchGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="132" y="139"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="LaunchImage" width="164.33332824707031" height="263.66665649414062"/>
+    </resources>
 </document>
