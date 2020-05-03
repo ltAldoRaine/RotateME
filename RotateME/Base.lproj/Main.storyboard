@@ -29,6 +29,7 @@
                                                 </connections>
                                             </imageView>
                                         </subviews>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="z4a-r2-bi2" secondAttribute="trailing" id="8eO-8H-9bz"/>
                                             <constraint firstItem="z4a-r2-bi2" firstAttribute="top" secondItem="kRv-fy-ey3" secondAttribute="top" id="Tg4-ZX-zGI"/>
